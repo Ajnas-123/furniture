@@ -1,0 +1,134 @@
+{% extends 'headerfooter.html' %}
+{% block content %}
+<style >
+    input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=tel]{
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+input[type=email]{
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
+input[type=password]{
+width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
+button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/*div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+*/  </style>
+  <!-- banner -->
+    <div class="banner_w3lspvt-2">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item" aria-current="page">register</li>
+      </ol>
+    </div>
+    <!-- //banner -->
+  </div>
+  <!-- //main banner -->
+
+  <!-- contact  -->
+  <section class="contact py-5">
+    <div class="container py-xl-5 py-lg-3">
+      <h3 class="title mb-5 pb-4 text-center font-weight-bold">registration</h3>
+      <div class="row">
+        <!-- contact form -->
+        <div class="col-lg-12 contact-us1-bottom w3layouts-w3ls">
+          <form action="/register/" method="POST">
+    {% csrf_token %}
+    <label for="fname">Name</label><br>
+    <input type="text" id="fid" name="fname" placeholder="Your name.."><br>
+
+   
+    <label for="lname">Email</label>
+    <input type="email" id="emid" name="emlname" placeholder="Your email.."><br>
+
+    <label for="lname">Password:</label>
+    <input type="Password" id="passid" name="passname"><br>
+
+
+
+
+
+
+    <label for="dob">DOB :</label>
+    <input type="date" id="dobid" name="dobname"><br><br>
+
+
+
+    <label for="nmbr">Phone no:</label>
+    <input type="tel" id="numid" name="numname"   pattern="[0-9]{10}" placeholder="your number..">
+
+    <label for="addrs">Address</label><br>
+    <textarea id="addid" name="addrname" rows="4" cols="70">    </textarea> <br>
+
+
+    <label for="city">City</label>
+    <input type="text" id="ctyname" name="ctyname" >
+
+    <label for="state">State</label>
+    <input type="text" id="statid" name="statname">
+
+    <label for="cntry">Country</label>
+    <input type="text" id="cntryid" name="cntryname">
+
+
+
+
+
+
+    <button>Submit</button>
+</form>
+        </div>
+        <!-- //contact form -->
+              </div>
+    </div>
+  </section>
+
+  
+
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	 <form action="/savechanges/" method="POST">
+	 	{% for x in queryset %} 
+    {% csrf_token %}
+    <input type="hidden" name="uid" value="{{x.id}}">
+    <label for="fname">Name</label>
+    <input type="text" id="fid" name="fname" placeholder="Your name.." value="{{x.firstname}}">
+
+   
+    <label for="lname">Email</label>
+    <input type="email" id="emid" name="emlname" placeholder="Your email.." value="{{x.email}}"><br>
+
+    
+
+
+
+
+
+
+    <label for="dob">DOB :</label>
+    <input type="date" id="dobid" name="dobname" value="{{x.dob}}"><br><br>
+
+
+
+    <label for="nmbr">Phone no:</label>
+    <input type="tel" id="numid" name="numname"   pattern="[0-9]{10}" placeholder="your number.." value="{{x.phone}}">
+
+    <label for="addrs">Address</label><br>
+    <textarea id="addid" name="addrname" rows="4" cols="70">{{x.address}}    </textarea> <br>
+
+
+    <label for="city">City</label>
+    <input type="text" id="ctyname" name="ctyname" value="{{x.city}}">
+
+    
+
+		<button>save changes</button>
+
+		{% endfor %}
+</form>
+
+</body>
+</html>

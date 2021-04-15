@@ -1,0 +1,58 @@
+{% extends 'headerfooter.html' %}
+
+{% block content %}
+		<!-- banner -->
+		<div class="banner_w3lspvt-2">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+				<li class="breadcrumb-item" aria-current="page">Login</li>
+			</ol>
+		</div>
+		<!-- //banner -->
+	</div>
+	<!-- //main banner -->
+
+	<!-- contact  -->
+	<section class="contact py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<h3 class="title mb-5 pb-4 text-center font-weight-bold">Login</h3>
+			<div class="row">
+				<!-- contact form -->
+				<div class="col-lg-12 contact-us1-bottom w3layouts-w3ls">
+
+					<p style="color: red;">{{msg}}</p>
+					<form action="/login/" method="POST">
+   {% csrf_token %}
+  
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="fname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="passname" required>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <a href="/"><button type="button" class="cancelbtn" style="background-color: red;">Cancel</button></a>
+
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+				</div>
+				<!-- //contact form -->
+				<!-- contact address -->
+				
+				<!-- //contact address -->
+			</div>
+		</div>
+	</section>
+
+
+
+	{% endblock %}
